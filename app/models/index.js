@@ -1,11 +1,16 @@
 "use strict";
 
+// Core Modules
 let fs = require("fs");
 let path = require("path");
+// App Modules
 let Sequelize = require("sequelize");
+// App Configuration
 let env = process.env.NODE_ENV || "development";
 let config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 let sequelize = new Sequelize(config.database, config.username, config.password, config);
+
+// Database Configuration   
 let db = {};
 
 
@@ -26,6 +31,6 @@ Object.keys(db).forEach(function(modelName) {
 });
 
 
-db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
 module.exports = db;
