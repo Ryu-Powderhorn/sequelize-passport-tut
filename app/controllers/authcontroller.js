@@ -1,6 +1,5 @@
+var exports = module.exports = {}
 
-exports = module.exports = {}
-x = 10;
 exports.signup = function(req, res) {
 
    res.render('signup');
@@ -10,3 +9,4 @@ exports.signup = function(req, res) {
 exports.signin = function(req, res) {
     res.render('signin');
 }
+

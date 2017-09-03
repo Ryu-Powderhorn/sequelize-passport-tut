@@ -34,7 +34,11 @@ require('./app/config/passport/passport.js')(passport, models.user);
 
 
 //Routes
-let authRoute = require('./app/routes/auth.js')(app);
+let authRoute = require('./app/routes/auth.js')(app, passport);
+
+
+//load passport strategies
+require('./app/config/passport/passport.js')(passport, models.user);
 
 app.get('/', function(req, res) {
     res.send('Ronin sequelize_passport api - powderhorn');
